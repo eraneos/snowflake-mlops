@@ -1,0 +1,39 @@
+# Training Pipeline Configuration (Base)
+# ML training settings, dataset configuration, and execution parameters
+# Feature views are defined in config/ml/feature_views/
+
+# Pipeline infrastructure (stages)
+pipeline:
+  dag_name: TRAINING_DAG  # Name of the training DAG task
+  job_stage: TRAINING_JOB_STAGE  # Stage for ML job artifacts and model files
+  dag_stage: TRAINING_DAG_STAGE  # Stage for DAG definitions and packaged Python modules
+
+# Dataset configuration
+dataset:
+  name: PUDO_OCCUPANCY_DATASET
+  source_table: PUDO_OCCUPANCY
+  train_days: 60
+  val_days: 15
+  test_days: 15
+  version: null  # Auto-generate from source table timestamp. Pin in prod.override.yaml for reproducibility.
+
+# Model configuration
+model:
+  name: PUDO__CAPACITY_MODEL
+
+# Execution settings
+execution:
+  compute_pool: OSS_SF_MLOPS_POOL  # Single env-agnostic pool per ADR-0004
+  use_gpu: false
+  target_instances: 1
+  # Schedule formats:
+  #   - null: Manual execution only
+  #   - Timedelta: "1d" (daily), "12h" (every 12 hours), "30m" (every 30 minutes)
+  #   - CRON: "0 8 * * *" (daily at 8am UTC)
+  #   - CRON with timezone: "0 8 * * * America/New_York" (daily at 8am ET)
+  schedule: null  # Manual execution
+
+# Model evaluation
+evaluation:
+  metric_name: test_mean_squared
+  metric_threshold: 0.7  # Max allowed (lower is better for MSE)

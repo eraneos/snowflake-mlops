@@ -1,0 +1,9 @@
+# Development Environment Overrides
+# Dev can experiment with newer feature view versions for ML pipelines
+
+feature_views:
+  pudo__historical_features:
+    version: "1.2"  # Override: Testing new historical features in dev
+
+  pudo__temporal_features:
+    enabled: false  # Override: Disable for faster iteration

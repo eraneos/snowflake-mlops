@@ -1,0 +1,25 @@
+# Inference Pipeline Configuration (Base)
+# Inference settings for model serving and predictions
+# Feature views are defined in config/ml/feature_views/
+
+# Pipeline infrastructure (stages and tables)
+pipeline:
+  dag_name: INFERENCE_DAG  # Name of the inference DAG task
+  dag_stage: INFERENCE_DAG_STAGE  # Stage for inference DAG definitions and packaged Python modules
+
+# Model selection
+model:
+  name: PUDO__CAPACITY_MODEL
+  use_latest_promoted: true
+  fallback_to_latest_version: true
+
+# Inference execution settings
+inference:
+  compute_pool: OSS_SF_MLOPS_POOL  # Single env-agnostic pool per ADR-0004
+  # Schedule formats:
+  #   - null: Manual execution only
+  #   - Timedelta: "6h" (every 6 hours), "1d" (daily), "30m" (every 30 minutes)
+  #   - CRON: "0 */6 * * *" (every 6 hours at minute 0 UTC)
+  #   - CRON with timezone: "0 8,14,20 * * * America/New_York" (8am, 2pm, 8pm ET)
+  schedule: null  # Manual execution
+  alert_threshold: 0.85  # Alert when capacity predicted above this

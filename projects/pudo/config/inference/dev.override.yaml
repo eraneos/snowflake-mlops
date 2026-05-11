@@ -1,0 +1,7 @@
+# Development Environment Overrides
+# Manual inference for dev testing
+
+inference:
+  compute_pool: OSS_SF_MLOPS_POOL  # Override: Use dev pool for dev environment
+  schedule: null  # Override: Manual only in dev
+  alert_threshold: 0.90  # Override: Higher threshold for dev (less noisy)

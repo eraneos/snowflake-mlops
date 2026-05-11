@@ -1,0 +1,23 @@
+{#-
+  Eraneos-branded copyright partial.
+  Extends the default Material copyright to include the Eraneos tagline
+  inline with "Made with Material for MkDocs".
+-#}
+<div class="md-copyright">
+  {% if config.copyright %}
+    <div class="md-copyright__highlight">
+      {{ config.copyright }}
+    </div>
+  {% endif %}
+  {% if not config.extra.generator == false %}
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  {% endif %}
+  <span class="md-footer-eraneos">
+    &mdash;
+    <strong><a href="https://www.eraneos.com/" target="_blank" rel="noopener">Eraneos</a></strong>
+    &mdash; Enabling you to win
+  </span>
+</div>

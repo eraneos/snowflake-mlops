@@ -1,0 +1,50 @@
+# Data Generation Configuration
+# Parameters for generating synthetic PUDO data
+
+# Dataset size configuration
+n_pudos: 100
+n_days: 365
+avg_parcels_per_day: 1000
+random_seed: 42
+start_date: "2024-07-01"
+
+# Berlin geographic bounds
+geography:
+  lat_center: 52.5200
+  lon_center: 13.4050
+  lat_range: 0.4
+  lon_range: 0.6
+
+# PUDO capacity ranges by type
+capacity:
+  locker:
+    min: 15
+    max: 35
+  shop:
+    min: 25
+    max: 70
+  post_office:
+    min: 35
+    max: 120
+
+# PUDO type distribution probabilities
+pudo_distribution:
+  shop_probability: 0.6
+  locker_probability: 0.3
+  post_office_probability: 0.1
+
+# Delivery success rates (controls PUDO fill rates)
+delivery_success:
+  first_attempt_success_rate: 0.45
+  second_attempt_success_rate: 0.25
+  pudo_redirection_rate: 0.30
+
+# Parcel characteristics
+parcel_distribution:
+  small_probability: 0.5
+  medium_probability: 0.3
+  large_probability: 0.2
+
+# Weight distribution parameters
+weight:
+  lambda: 2.0  # Exponential distribution parameter

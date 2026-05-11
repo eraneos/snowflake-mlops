@@ -1,0 +1,6 @@
+# Staging Environment Overrides
+# Test scheduled inference before prod
+
+inference:
+  compute_pool: OSS_SF_MLOPS_POOL  # Override: Use dev pool (larger, for testing)
+  schedule: "0 7 * * *"  # Override: Daily retraining at 7am

@@ -1,0 +1,19 @@
+# Snowflake infrastructure constants used by mock_data.
+#
+# Per ADR-0004 these resource names are platform-fixed. Per ADR-0001 each
+# component is independent, so the values are duplicated here rather than
+# imported from hub. Hub remains the canonical creator (per ADR-0001 / ADR-0004);
+# mock_data only reads.
+
+database:
+  name: "OSS_SF_MLOPS"
+
+role:
+  name: "OSS_SF_MLOPS_DEVELOPER"
+
+warehouse:
+  name: "OSS_SF_MLOPS_WH"
+
+shared_data:
+  schema_name: "SHARED_DATA"
+  description: "Shared source data tables used by all environments"

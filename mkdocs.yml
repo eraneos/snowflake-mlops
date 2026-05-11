@@ -1,0 +1,110 @@
+site_name: Snowflake MLOps Reference
+site_description: >-
+  An open-source reference monorepo demonstrating production-grade MLOps on
+  Snowflake using a hub-spoke architecture, feature stores, model registries,
+  and task-graph orchestration.
+site_url: ""
+repo_url: ""
+repo_name: ""
+
+theme:
+  name: material
+  language: en
+  custom_dir: overrides
+  logo: assets/brand/eraneos_wordmark_white.svg
+  favicon: assets/brand/eraneos_wordmark_white.svg
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: eraneos
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: eraneos-dark
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Arial
+    code: Arial
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.indexes
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
+
+docs_dir: user_docs
+site_dir: site
+
+extra_css:
+  - stylesheets/eraneos.css
+
+nav:
+  - Home: index.md
+  - Start Here: start-here.md
+  - Use Case: use-case.md
+  - Tutorials:
+      - tutorials/index.md
+      - "1: Prerequisites & Bootstrap": tutorials/01-prerequisites-and-snowflake-bootstrap.md
+      - "2: Repo Mental Model": tutorials/02-repo-mental-model.md
+      - "3: Seed Shared Data": tutorials/03-seed-shared-data.md
+      - "4: Deploy Schema & Feature Store": tutorials/04-deploy-schema-and-feature-store.md
+      - "5: Deploy & Run Training": tutorials/05-deploy-and-run-training.md
+      - "6: Deploy & Run Inference": tutorials/06-deploy-and-run-inference.md
+      - "7: Simulate, Evaluate & Alert": tutorials/07-simulate-morning-evening-and-evaluate.md
+      - "8: Change Promotion & ML Lifecycle": tutorials/08-change-promotion-and-ml-lifecycle.md
+  - Concepts:
+      - concepts/index.md
+      - Repo Layers & Ownership: concepts/repo-layers.md
+      - Snowflake ML Lifecycle: concepts/snowflake-ml-lifecycle.md
+      - Feature Store: concepts/feature-store.md
+      - Model Registry & Training Artifacts: concepts/model-registry-and-training-artifacts.md
+      - Task Graphs & Orchestration: concepts/task-graphs-and-orchestration.md
+      - Environments & Promotion: concepts/environments-and-promotion.md
+  - Guides:
+      - guides/index.md
+      - Local Setup & Env Files: guides/local-setup-and-env-files.md
+      - First End-to-End Run: guides/first-end-to-end-run.md
+      - Troubleshooting: guides/troubleshooting.md
+      - Working with Make Targets: guides/working-with-make-targets.md
+  - Reference:
+      - reference/index.md
+      - Component Overview: reference/component-overview.md
+      - Command Reference: reference/command-reference.md
+      - Glossary: reference/glossary.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - footnotes
+  - tables

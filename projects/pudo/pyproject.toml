@@ -1,0 +1,122 @@
+[project]
+name = "pudo"
+version = "0.1.0"
+description = "PUDO capacity prediction example project (feature views, training DAG, inference DAG)."
+requires-python = "~=3.10.0"
+dependencies = [
+    "cloudpickle>=2.0.0",
+    "cryptography>=42.0.0",
+    "deepmerge>=2.0",
+    "loguru>=0.7.3",
+    "numpy>=1.26.4",
+    "pandas>=2.3.3",
+    "polars>=1.34.0",
+    # Pydantic upper bounds align with the Snowflake remote runtime; see CLAUDE.md.
+    "pydantic>=2.0.0,<=2.11.9",
+    "pydantic-settings>=2.0.0,<=2.10.1",
+    "python-dotenv>=1.1.1",
+    "pyyaml>=6.0.0",
+    "rich>=14.1.0",
+    "scikit-learn>=1.3.0",
+    "snowflake-connector-python[secure-local-storage]>=3.18.0",
+    "snowflake-ml-python==1.16.0",
+    "snowflake-snowpark-python[pandas]==1.39.1",
+    "tomli>=2.0.0 ; python_full_version < '3.11'",
+    "typer>=0.19.2",
+    "xgboost>=2.1.4",
+]
+
+[project.scripts]
+pudo-inference = "pudo.inference.cli:main"
+
+[dependency-groups]
+dev = [
+    "basedpyright>=1.31.7",
+    "pytest>=8.4.2",
+    "ruff>=0.14.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pudo"]
+
+# The [tool.ruff] block below is parked here as an interim placement during the
+# hub-spoke migration. Its permanent home (a dedicated tooling-config file at
+# the repo root, per-component pyproject duplication, or otherwise) is owned by
+# ADR-0019 and is decided when that ADR is grilled. Both axes of ADR-0019
+# remain fully open. The placement is mechanical, not an endorsement of any
+# working hypothesis.
+
+[tool.ruff]
+src = ["src"]
+line-length = 120
+target-version = "py310"
+include = ["*.py", "*.pyi", "**/pyproject.toml"]
+
+[tool.ruff.lint]
+select = [
+  "E",   # pycodestyle
+  "F",   # pyflakes
+  "UP",  # pyupgrade
+  "PD",  # pandas-vet
+  "I",   # isort
+  "N",   # pep8-naming
+  "S",   # flake8-bandit
+  "BLE", # flake8-blind-except
+  "FBT", # flake8-boolean-trap
+  "B",   # flake8-bugbear
+  "A",   # flake8-builtins
+  "C4",  # flake8-comprehensions
+  "EM",  # flake8-errmsg
+  "FA",  # flake8-future-annotations
+  "ISC", # flake8-implicit-str-concat
+  "ICN", # flake8-import-conventions
+  "T20", # flake8-print
+  "PT",  # flake8-pytest-style
+  "RET", # flake8-return
+  "SIM", # flake8-simplify
+  "PTH", # flake8-use-pathlib
+  "ERA", # eradicate
+  "PGH", # pygrep-hooks
+  "NPY", # NumPy-specific rules
+  "PERF",# Perflint
+  "RUF", # Ruff-specific rules
+]
+fixable = ["ALL"]
+unfixable = []
+ignore = [
+  "ISC001", # Ruff warns that this rule may cause conflicts when used with their formatter.
+  "D",   # pydocstyle
+  "BLE001",
+  "N803",
+  "N806",
+  "PD901", # Allow generic 'df' variable names for DataFrames
+  "S602",
+  "S603",
+  "S607",
+  "S608",  # SQL injection warnings - safe with config-based identifiers
+]
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[tool.ruff.lint.per-file-ignores]
+"**/tests/**/*.py" = [
+  "S101",
+  "S105",
+  "S108",
+]
+"**/__init__.py" = [
+  "D104",
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
+force-sort-within-sections = true
+
+[tool.ruff.format]
+docstring-code-format = true

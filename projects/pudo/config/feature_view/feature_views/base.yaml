@@ -1,0 +1,22 @@
+# ML Feature Views Configuration (Base)
+# Unified feature view definitions for training and inference pipelines
+# Versions pinned for ML reproducibility (feature_store config tracks latest available)
+
+feature_views:
+  pudo__historical_features:
+    version: "1.0"
+    enabled: true
+    description: "Historical capacity and delivery patterns"
+    snowflake_name: "PUDO__HISTORICAL_FEATURES"
+
+  pudo__geospatial_features:
+    version: "1.0"
+    enabled: true
+    description: "Geographic features (parcel counts within radius)"
+    snowflake_name: "PUDO__GEOSPATIAL_FEATURES"
+
+  pudo__temporal_features:
+    version: "1.0"
+    enabled: true
+    description: "Time-based patterns (day of week, hour)"
+    snowflake_name: "PUDO__TEMPORAL_FEATURES"

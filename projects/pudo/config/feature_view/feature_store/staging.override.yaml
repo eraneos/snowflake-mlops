@@ -1,0 +1,13 @@
+# Staging Environment Overrides
+# Staging validates production readiness with slightly newer versions
+
+feature_views:
+  pudo__historical_features:
+    version: "1.1"  # Override: One version ahead of prod for testing
+
+  pudo__temporal_features:
+    enabled: true  # Override: Re-enable for integration testing
+
+# Staging: immutable versions (inherits from base)
+deployment:
+  allow_version_overwrite: false  # Override: Explicit immutability for staging

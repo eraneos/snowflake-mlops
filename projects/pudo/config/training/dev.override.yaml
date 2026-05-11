@@ -1,0 +1,12 @@
+# Development Environment Overrides
+# Smaller datasets and simpler execution for faster iteration
+
+dataset:
+  train_days: 30  # Override: Smaller dataset for dev
+  val_days: 7
+  test_days: 7
+
+execution:
+  compute_pool: OSS_SF_MLOPS_POOL  # Override: Use dev pool for dev environment
+  use_gpu: false  # Override: No GPU in dev (cost savings)
+  target_instances: 2  # Override: Single instance

@@ -1,0 +1,5 @@
+# Pinned data-generation parameters that the PUDO feature views consume.
+# Authoritative copy lives in mock_data/config/data_generation.yaml; this file
+# is the project-local mirror per ADR-0001 (no cross-component imports).
+
+start_date: "2024-07-01"

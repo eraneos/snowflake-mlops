@@ -1,0 +1,34 @@
+# PUDO project's view of platform-level Snowflake resources.
+# These names are pinned by ADR-0004 and bootstrapped by the hub component.
+# Per ADR-0001 each project carries its own copy (no cross-component imports).
+
+database:
+  name: "OSS_SF_MLOPS"
+
+role:
+  name: "OSS_SF_MLOPS_DEVELOPER"
+
+warehouse:
+  name: "OSS_SF_MLOPS_WH"
+  size: "XSMALL"
+  auto_suspend: 30
+  auto_resume: true
+
+compute_pools:
+  dev:
+    name: "OSS_SF_MLOPS_POOL"
+    min_nodes: 1
+    max_nodes: 50
+    instance_family: "GPU_NV_S"
+    auto_suspend_secs: 600
+
+  prod:
+    name: "OSS_SF_MLOPS_POOL"
+    min_nodes: 1
+    max_nodes: 50
+    instance_family: "GPU_NV_S"
+    auto_suspend_secs: 600
+
+shared_data:
+  schema_name: "SHARED_DATA"
+  description: "Shared source data tables, owned by hub bootstrap"

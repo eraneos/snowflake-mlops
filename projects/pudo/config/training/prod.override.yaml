@@ -1,0 +1,23 @@
+# Production Environment Overrides
+# Full-scale training with GPU and scheduled execution
+
+dataset:
+  train_days: 90  # Override: Maximum historical data
+  val_days: 20
+  test_days: 20
+  # IMPORTANT: Pin dataset version for reproducibility
+  #
+  # For production releases, use semantic versioning for datasets:
+  # 1. Set version (e.g., "1.0" for first production release)
+  # 2. Run training - dataset will be created with this version
+  # 3. Commit and tag the release (e.g., git tag v1.0.0)
+  # 4. For next release, increment version (e.g., "1.1" or "2.0")
+  version: "1.0"
+
+execution:
+  compute_pool: OSS_SF_MLOPS_POOL  # Single env-agnostic pool per ADR-0004
+  use_gpu: true  # Override: GPU for faster training
+  target_instances: 2  # Override: Distributed training
+
+evaluation:
+  metric_threshold: 0.65  # Override: Stricter threshold for prod

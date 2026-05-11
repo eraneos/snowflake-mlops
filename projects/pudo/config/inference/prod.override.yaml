@@ -1,0 +1,7 @@
+# Production Environment Overrides
+# Scheduled inference with stricter alerting
+
+inference:
+  compute_pool: OSS_SF_MLOPS_POOL  # Single env-agnostic pool per ADR-0004
+  schedule: "0 6 * * *"  # Override: Daily retraining at 6am
+  alert_threshold: 0.80  # Override: Lower threshold (more sensitive)

@@ -1,0 +1,77 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+test.py
+
+# Environments
+.env*
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Secrets
+*.p8
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# ruff
+.ruff_cache/
+
+# Project specific
+*.log
+temp/
+tmp/
+workshop_prep/
+
+# AI assistants
+.roo/
+.claude/
+CLAUDE.md
+
+# Snowflake samples
+sf-samples/
+sfguide-getting-started-with-snowflake-feature-store/
+
+# MkDocs
+site/
+
+# Misc
+.obsidian/
+.external/

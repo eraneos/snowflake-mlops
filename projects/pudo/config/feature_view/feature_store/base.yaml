@@ -1,0 +1,31 @@
+# Feature Store Configuration (Base)
+# This config tracks the LATEST AVAILABLE versions of feature views for deployment.
+#
+# NOTE: ML pipelines (training/inference) pin specific versions in config/ml/feature_views/
+# for reproducibility. This allows:
+# - Feature store deployment to register latest versions
+# - ML pipelines to consume stable, pinned versions
+# - Independent evolution: deploy new FV versions without affecting running ML pipelines
+#
+# Per-feature-view versioning - each FV can evolve independently
+
+# Feature view definitions with latest available versions
+feature_views:
+  pudo__historical_features:
+    version: "1.0"
+    enabled: true
+    description: "Historical capacity and delivery patterns"
+
+  pudo__geospatial_features:
+    version: "1.0"
+    enabled: true
+    description: "Geographic features (parcel counts within radius)"
+
+  pudo__temporal_features:
+    version: "1.0"
+    enabled: true
+    description: "Time-based patterns (day of week, hour)"
+
+# Deployment settings (base defaults)
+deployment:
+  allow_version_overwrite: false  # Default: immutable versions (safe for staging/prod)

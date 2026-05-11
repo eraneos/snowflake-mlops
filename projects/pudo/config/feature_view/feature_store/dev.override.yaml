@@ -1,0 +1,13 @@
+# Development Environment Overrides
+# Dev can experiment with newer feature view versions
+
+feature_views:
+  pudo__historical_features:
+    version: "1.2"  # Override: Testing new historical features in dev
+
+  pudo__temporal_features:
+    enabled: false  # Override: Disable for faster iteration
+
+# Dev allows version overwrites for fast iteration
+deployment:
+  allow_version_overwrite: true  # Override: Allow re-registering same version in dev

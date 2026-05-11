@@ -1,0 +1,6 @@
+# Production Environment Overrides
+# Prod uses only stable, proven versions (from base.yaml)
+# Strict deployment settings for production
+
+deployment:
+  allow_version_overwrite: false  # Override: Strict immutability for prod

@@ -1,0 +1,12 @@
+# Staging Environment Overrides
+# Full-scale datasets to validate production readiness
+
+dataset:
+  train_days: 75  # Override: Slightly larger for staging validation
+  val_days: 20
+  test_days: 20
+
+execution:
+  compute_pool: OSS_SF_MLOPS_POOL  # Override: Use dev pool (larger, supports GPU testing)
+  use_gpu: true  # Override: Test GPU performance
+  target_instances: 2  # Override: Test distributed training
