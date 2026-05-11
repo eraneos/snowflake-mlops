@@ -1,13 +1,14 @@
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="user_docs/assets/brand/eraneos_wordmark_white.svg">
-    <img src="user_docs/assets/brand/eraneos_wordmark_black.svg" alt="Eraneos" width="600">
+    <source media="(prefers-color-scheme: dark)" srcset="docs/assets/brand/eraneos_wordmark_white.svg">
+    <img src="docs/assets/brand/eraneos_wordmark_black.svg" alt="Eraneos" width="600">
   </picture>
 </p>
 
 # Snowflake MLOps Reference Monorepo
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+[![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://eraneos.github.io/snowflake-mlops/)
 
 An open-source reference monorepo for end-to-end MLOps on Snowflake. The repo serves two complementary purposes:
 
@@ -24,7 +25,7 @@ hub/                   # platform IaC: account-level resources, shared schemas
 mock_data/             # SHARED_DATA fixtures (replaced by real ingestion in production)
 feature_store/         # central SHARED__ feature views (placeholder at baseline)
 projects/pudo/         # example project: feature views, training DAG, inference DAG
-user_docs/             # MkDocs site: tutorials, concepts, guides, reference
+docs/                  # MkDocs site: tutorials, concepts, guides, reference
 ```
 
 The repo root has no `pyproject.toml` and no `Makefile`. Each component is independently locked and orchestrated.
@@ -66,12 +67,14 @@ Each component's `Makefile` documents the full set of verbs available there (dep
 
 ## Where to read more
 
-- `user_docs/start-here.md`: orientation and reading paths by role.
-- `user_docs/index.md`: catalog of every documentation page.
-- `user_docs/tutorials/`: step-by-step newcomer path (bootstrap, seed, deploy, train, infer).
-- `user_docs/concepts/`: hub-spoke architecture, Snowflake ML lifecycle, feature store, model registry, task graphs, environment promotion.
-- `user_docs/guides/`: practical how-tos (local setup, first end-to-end run, troubleshooting, Make targets).
-- `user_docs/reference/`: command reference, component overview, glossary.
+Full documentation at **[eraneos.github.io/snowflake-mlops](https://eraneos.github.io/snowflake-mlops/)**.
+
+- `docs/start-here.md`: orientation and reading paths by role.
+- `docs/index.md`: catalog of every documentation page.
+- `docs/tutorials/`: step-by-step newcomer path (bootstrap, seed, deploy, train, infer).
+- `docs/concepts/`: hub-spoke architecture, Snowflake ML lifecycle, feature store, model registry, task graphs, environment promotion.
+- `docs/guides/`: practical how-tos (local setup, first end-to-end run, troubleshooting, Make targets).
+- `docs/reference/`: command reference, component overview, glossary.
 - `hub/README.md`, `mock_data/README.md`, `projects/pudo/README.md`, `feature_store/README.md`: per-component details.
 
 ## Contributing
