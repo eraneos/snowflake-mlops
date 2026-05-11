@@ -27,14 +27,14 @@ projects/pudo/         # example project: feature views, training DAG, inference
 user_docs/             # MkDocs site: tutorials, concepts, guides, reference
 ```
 
-The repo root has no `pyproject.toml` and no `Makefile`. Each component is independently locked and orchestrated. See ADR-0011 and ADR-0012.
+The repo root has no `pyproject.toml` and no `Makefile`. Each component is independently locked and orchestrated.
 
-The architectural rule that constrains every layout choice: hub and shared code may be referenced by projects; projects may never be referenced by hub or shared code. See ADR-0001.
+The architectural rule that constrains every layout choice: hub and shared code may be referenced by projects; projects may never be referenced by hub or shared code.
 
 ## Prerequisites
 
 - Snowflake account. `ACCOUNTADMIN` (or `SECURITYADMIN`) is required for the one-time hub bootstrap that creates account-level objects; all subsequent operations run as `OSS_SF_MLOPS_DEVELOPER`.
-- Python 3.10 (driven by the Snowflake remote runtime; see ADR-0011).
+- Python 3.10 (driven by the Snowflake remote runtime).
 - [`uv`](https://docs.astral.sh/uv/) package manager.
 
 ## Setup
@@ -46,7 +46,7 @@ The architectural rule that constrains every layout choice: hub and shared code 
 
 ## End-to-end deploy
 
-A fresh checkout reaches a fully deployed state by running these verbs in order. Each runs against the corresponding component; the root has no aggregator (per ADR-0011).
+A fresh checkout reaches a fully deployed state by running these verbs in order. Each runs against the corresponding component; the root has no aggregator.
 
 ```sh
 # 1. Hub: account-level resources + shared schemas (one-time, ACCOUNTADMIN).
