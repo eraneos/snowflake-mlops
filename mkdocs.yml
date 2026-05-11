@@ -3,9 +3,9 @@ site_description: >-
   An open-source reference monorepo demonstrating production-grade MLOps on
   Snowflake using a hub-spoke architecture, feature stores, model registries,
   and task-graph orchestration.
-site_url: ""
-repo_url: ""
-repo_name: ""
+site_url: "https://eraneos.github.io/snowflake-mlops/"
+repo_url: "https://github.com/eraneos/snowflake-mlops"
+repo_name: "eraneos/snowflake-mlops"
 
 theme:
   name: material
@@ -46,7 +46,7 @@ theme:
     - content.code.copy
     - content.code.annotate
 
-docs_dir: user_docs
+docs_dir: docs
 site_dir: site
 
 extra_css:
