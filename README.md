@@ -12,7 +12,7 @@
 
 An open-source reference monorepo for end-to-end MLOps on Snowflake. The repo serves two complementary purposes:
 
-1. **Show what end-to-end MLOps on Snowflake can look like for a realistic, multi-team setup.** Existing Snowflake ML material covers individual pieces of the workflow. This repo wires those pieces into a single worked example. It uses a hub-spoke layout (central platform infrastructure plus team-owned project spokes) as one specific way to organize that example. Other layouts can solve the same problem; the patterns demonstrated here generalize.
+1. **Show what end-to-end MLOps on Snowflake can look like for a realistic, multi-team setup.** Existing Snowflake ML material focuses on individual pieces of the workflow. This repo wires the different Snowflake-native MLOps features together. It uses a hub-spoke layout (central platform infrastructure plus team-owned project spokes) as one specific way to organize that example. Other layouts can solve the same problem; the patterns demonstrated here generalize.
 
 2. **Showcase the breadth of Snowflake-native MLOps primitives and how they interact.** The repo exercises the Snowflake Feature Store, the Snowflake ML Model Registry, Snowflake Tasks DAGs for training and inference orchestration, native task observability (`TASK_HISTORY`, Account Usage), and the surrounding primitives (databases, schemas, warehouses, compute pools, roles, stages) that wire them together. Design choices default to Snowflake-native primitives over external tooling; external dependencies are introduced only when no native primitive exists or the native option is materially worse.
 
@@ -25,7 +25,7 @@ hub/                   # platform IaC: account-level resources, shared schemas
 mock_data/             # SHARED_DATA fixtures (replaced by real ingestion in production)
 feature_store/         # central SHARED__ feature views (placeholder at baseline)
 projects/pudo/         # example project: feature views, training DAG, inference DAG
-docs/                  # MkDocs site: tutorials, concepts, guides, reference
+docs/                  # tutorials, concepts, guides, reference
 ```
 
 The repo root has no `pyproject.toml` and no `Makefile`. Each component is independently locked and orchestrated.
