@@ -1,0 +1,556 @@
+/* ============================================================
+   Eraneos brand tokens for MkDocs Material
+   Source: .brand/Colors and Fonts.md + Brand Design Guidelines 2025
+   ============================================================ */
+
+/* --- Custom properties (light theme) ----------------------- */
+:root,
+[data-md-color-scheme="eraneos"] {
+  /* Primary palette */
+  --eraneos-black:          #000000;
+  --eraneos-white:          #ffffff;
+  --eraneos-bold-orange:    #ff6600;
+  --eraneos-highlight-blue: #5d70ff;
+  --eraneos-reliable-blue:  #142647;
+
+  /* Reliable-blue scale (for information graphics) */
+  --eraneos-blue-2: #2b3d61;
+  --eraneos-blue-3: #425478;
+  --eraneos-blue-4: #59698f;
+  --eraneos-blue-5: #7080a8;
+  --eraneos-blue-6: #8796c2;
+  --eraneos-blue-7: #9cabd9;
+  --eraneos-blue-8: #b0c2f0;
+  --eraneos-blue-9: #bfd1ff;
+
+  /* Semantic surface tokens */
+  --md-default-bg-color:           var(--eraneos-white);
+  --md-default-fg-color:           var(--eraneos-black);
+  --md-default-fg-color--light:    #425478;
+  --md-default-fg-color--lighter:  #7080a8;
+
+  /* Primary / accent overrides */
+  --md-primary-fg-color:               var(--eraneos-black);
+  --md-primary-fg-color--light:        var(--eraneos-blue-3);
+  --md-primary-fg-color--dark:         var(--eraneos-black);
+  --md-primary-bg-color:               var(--eraneos-white);
+  --md-primary-bg-color--light:        #f5f5f5;
+
+  --md-accent-fg-color:                var(--eraneos-bold-orange);
+  --md-accent-fg-color--transparent:   rgba(255, 102, 0, 0.08);
+  --md-accent-bg-color:                var(--eraneos-white);
+
+  /* Typography */
+  --md-text-font: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+  --md-code-font: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+
+  /* Typeset color overrides */
+  --md-typeset-color:                 var(--eraneos-black);
+  --md-typeset-a-color:               var(--eraneos-bold-orange);
+  --md-typeset-a-color--hover:        #e05a00;
+  --md-typeset-mark-color:            rgba(255, 102, 0, 0.15);
+  --md-typeset-kbd-color:             var(--eraneos-blue-7);
+  --md-typeset-kbd-accent-color:      var(--eraneos-highlight-blue);
+  --md-typeset-kbd-border-color:      var(--eraneos-blue-8);
+
+  /* Code blocks */
+  --md-code-bg-color:                 #f7f7f7;
+  --md-code-fg-color:                 var(--eraneos-black);
+
+  /* Footer */
+  --md-footer-fg-color:               var(--eraneos-white);
+  --md-footer-fg-color--light:        var(--eraneos-white);
+  --md-footer-bg-color:               var(--eraneos-black);
+  --md-footer-bg-color--dark:         var(--eraneos-black);
+}
+
+/* --- Dark theme tokens ------------------------------------ */
+[data-md-color-scheme="eraneos-dark"] {
+  --md-default-bg-color:           #0d0d0d;
+  --md-default-fg-color:           #f0f0f0;
+  --md-default-fg-color--light:    #b0c2f0;
+  --md-default-fg-color--lighter:  #7080a8;
+
+  --md-primary-fg-color:           var(--eraneos-black);
+  --md-primary-fg-color--light:    var(--eraneos-blue-3);
+  --md-primary-fg-color--dark:     var(--eraneos-black);
+  --md-primary-bg-color:           #141414;
+  --md-primary-bg-color--light:    #1a1a1a;
+
+  --md-accent-fg-color:            var(--eraneos-bold-orange);
+  --md-accent-fg-color--transparent: rgba(255, 102, 0, 0.12);
+  --md-accent-bg-color:            #1a1a1a;
+
+  --md-typeset-color:              #e0e0e0;
+  --md-typeset-a-color:            var(--eraneos-bold-orange);
+  --md-typeset-a-color--hover:     #ff8533;
+  --md-typeset-mark-color:         rgba(255, 102, 0, 0.2);
+
+  --md-code-bg-color:              #1a1a1a;
+  --md-code-fg-color:              #e0e0e0;
+
+  --md-footer-bg-color:            var(--eraneos-black);
+  --md-footer-bg-color--dark:      var(--eraneos-black);
+}
+
+/* ============================================================
+   Global typography
+   ============================================================ */
+body {
+  font-family: var(--md-text-font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--md-text-font);
+  font-weight: 700;
+  color: var(--md-default-fg-color);
+}
+
+/* ============================================================
+   Header / navigation bar
+   ============================================================ */
+.md-header {
+  background-color: var(--md-primary-fg-color) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+.md-header__title {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+/* Header text, nav links, and buttons in the top bar */
+.md-header * {
+  color: #ffffff;
+}
+
+.md-header__button:hover {
+  color: var(--eraneos-bold-orange);
+}
+
+/* Navigation tabs (top-level) */
+.md-tabs {
+  background-color: var(--md-primary-fg-color--dark) !important;
+  color: #ffffff;
+}
+
+.md-tabs__link {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8) !important;
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+.md-tabs__link:hover,
+.md-tabs__link--active {
+  color: #ffffff !important;
+  opacity: 1;
+}
+
+/* Source-repo icon in header */
+.md-header__source {
+  color: #ffffff;
+}
+
+/* ============================================================
+   Logo sizing
+   ============================================================ */
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 28px;
+  width: auto;
+}
+
+/* ============================================================
+   Links
+   ============================================================ */
+.md-typeset a {
+  color: var(--md-typeset-a-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+
+.md-typeset a:hover {
+  color: var(--md-typeset-a-color--hover);
+  text-decoration: underline;
+}
+
+/* ============================================================
+   Buttons (.md-button)
+   ============================================================ */
+.md-button {
+  background-color: var(--eraneos-bold-orange) !important;
+  color: var(--eraneos-white) !important;
+  border: none;
+  border-radius: 4px;
+  font-weight: 700;
+  padding: 0.55em 1.4em;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.md-button:hover {
+  background-color: #e05a00 !important;
+  color: var(--eraneos-white) !important;
+  box-shadow: 0 2px 8px rgba(255, 102, 0, 0.3);
+}
+
+.md-button--primary {
+  background-color: var(--eraneos-bold-orange) !important;
+}
+
+.md-button--secondary {
+  background-color: transparent !important;
+  color: var(--eraneos-bold-orange) !important;
+  border: 2px solid var(--eraneos-bold-orange) !important;
+}
+
+.md-button--secondary:hover {
+  background-color: var(--eraneos-bold-orange) !important;
+  color: var(--eraneos-white) !important;
+}
+
+/* ============================================================
+   Admonitions (callouts)
+   ============================================================ */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 4px;
+  border-left: 4px solid var(--eraneos-highlight-blue);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.md-typeset .admonition > .admonition-title,
+.md-typeset details > summary {
+  font-weight: 700;
+}
+
+/* Info / note */
+.md-typeset .admonition-info,
+.md-typeset details.info {
+  border-left-color: var(--eraneos-highlight-blue);
+}
+
+.md-typeset .admonition-info > .admonition-title,
+.md-typeset details.info > summary {
+  background-color: rgba(93, 112, 255, 0.08);
+  color: var(--eraneos-highlight-blue);
+}
+
+/* Warning */
+.md-typeset .admonition-warning,
+.md-typeset details.warning {
+  border-left-color: var(--eraneos-bold-orange);
+}
+
+.md-typeset .admonition-warning > .admonition-title,
+.md-typeset details.warning > summary {
+  background-color: rgba(255, 102, 0, 0.08);
+  color: var(--eraneos-bold-orange);
+}
+
+/* Tip */
+.md-typeset .admonition-tip,
+.md-typeset details.tip {
+  border-left-color: var(--eraneos-blue-5);
+}
+
+.md-typeset .admonition-tip > .admonition-title,
+.md-typeset details.tip > summary {
+  background-color: rgba(112, 128, 168, 0.08);
+  color: var(--eraneos-blue-3);
+}
+
+/* ============================================================
+   Tables
+   ============================================================ */
+.md-typeset table:not([class]) {
+  border-collapse: collapse;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--eraneos-reliable-blue);
+  color: var(--eraneos-white);
+  font-weight: 700;
+}
+
+.md-typeset table:not([class]) td {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.md-typeset table:not([class]) tr:hover td {
+  background-color: rgba(93, 112, 255, 0.04);
+}
+
+/* Dark-mode table adjustments */
+[data-md-color-scheme="eraneos-dark"] .md-typeset table:not([class]) th {
+  background-color: var(--eraneos-blue-2);
+}
+
+[data-md-color-scheme="eraneos-dark"] .md-typeset table:not([class]) td {
+  border-bottom-color: #2a2a2a;
+}
+
+/* ============================================================
+   Code blocks
+   ============================================================ */
+.md-typeset code {
+  border-radius: 3px;
+  font-size: 0.85em;
+}
+
+.md-typeset pre {
+  border-radius: 4px;
+  border-left: 3px solid var(--eraneos-highlight-blue);
+}
+
+.md-typeset pre > code {
+  font-size: 0.82em;
+}
+
+/* Copy button */
+.md-clipboard {
+  color: var(--eraneos-blue-5) !important;
+}
+
+.md-clipboard:hover {
+  color: var(--eraneos-bold-orange) !important;
+}
+
+/* ============================================================
+   Search
+   ============================================================ */
+.md-search__form {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.md-search__form:hover {
+  background-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.md-search__input {
+  color: #ffffff;
+}
+
+.md-search__input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.md-search__input + .md-search__icon {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Search overlay (when search is open) */
+.md-search__overlay {
+  background-color: var(--eraneos-black);
+  opacity: 0.6;
+}
+
+/* Search result panel */
+.md-search__scrollwrap {
+  background-color: var(--md-default-bg-color);
+}
+
+.md-search-result__article {
+  color: var(--md-default-fg-color);
+}
+
+.md-search-result__teaser {
+  color: var(--md-default-fg-color--light);
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.md-footer {
+  background-color: var(--eraneos-black) !important;
+  border-top: 3px solid var(--eraneos-bold-orange);
+}
+
+.md-footer-meta {
+  background-color: var(--eraneos-black) !important;
+}
+
+.md-footer__link {
+  font-weight: 600;
+}
+
+/* Custom footer tagline injected via overrides/partials/copyright.html.
+   The Eraneos tagline is centered while Material credit stays left. */
+.md-footer-meta__inner {
+  position: relative;
+}
+
+.md-footer-eraneos {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.md-footer-eraneos a {
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.md-footer-eraneos a:hover {
+  color: var(--eraneos-bold-orange);
+}
+
+/* ============================================================
+   Sidebar navigation
+   ============================================================ */
+.md-sidebar__inner {
+  font-size: 0.82rem;
+}
+
+.md-nav__link--active {
+  font-weight: 700;
+  color: var(--eraneos-bold-orange);
+}
+
+.md-nav__link:hover {
+  color: var(--eraneos-bold-orange);
+}
+
+/* ============================================================
+   Homepage-specific styling
+   ============================================================ */
+.eraneos-hero {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 2rem;
+}
+
+.eraneos-hero h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--eraneos-black);
+}
+
+.eraneos-hero p {
+  font-size: 1.1rem;
+  color: var(--eraneos-blue-3);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+[data-md-color-scheme="eraneos-dark"] .eraneos-hero h1 {
+  color: #f0f0f0;
+}
+
+[data-md-color-scheme="eraneos-dark"] .eraneos-hero p {
+  color: var(--eraneos-blue-7);
+}
+
+[data-md-color-scheme="eraneos-dark"] .eraneos-hero {
+  border-bottom-color: #2a2a2a;
+}
+
+/* CTA cards on homepage */
+.eraneos-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.eraneos-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 1.4rem 1.2rem;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.eraneos-card:hover {
+  border-color: var(--eraneos-bold-orange);
+  box-shadow: 0 2px 10px rgba(255, 102, 0, 0.08);
+}
+
+.eraneos-card h3 {
+  margin-top: 0;
+  font-size: 1rem;
+}
+
+.eraneos-card h3 a {
+  color: var(--eraneos-black) !important;
+  font-weight: 700;
+}
+
+.eraneos-card h3 a:hover {
+  color: var(--eraneos-bold-orange) !important;
+}
+
+.eraneos-card p {
+  font-size: 0.85rem;
+  color: var(--md-default-fg-color--light);
+  margin-bottom: 0;
+}
+
+[data-md-color-scheme="eraneos-dark"] .eraneos-card {
+  border-color: #2a2a2a;
+}
+
+[data-md-color-scheme="eraneos-dark"] .eraneos-card:hover {
+  border-color: var(--eraneos-bold-orange);
+}
+
+[data-md-color-scheme="eraneos-dark"] .eraneos-card h3 a {
+  color: #f0f0f0 !important;
+}
+
+/* ============================================================
+   Back-to-top button
+   ============================================================ */
+.md-top {
+  background-color: var(--eraneos-bold-orange) !important;
+  color: var(--eraneos-white) !important;
+}
+
+.md-top:hover {
+  background-color: #e05a00 !important;
+}
+
+/* ============================================================
+   Task lists (checkboxes)
+   ============================================================ */
+.md-typeset .task-list-control .task-list-indicator::before {
+  color: var(--eraneos-highlight-blue);
+}
+
+/* ============================================================
+   Permalinks (¶)
+   ============================================================ */
+.md-typeset .headerlink {
+  color: var(--eraneos-blue-5);
+  transition: color 0.15s ease;
+}
+
+.md-typeset .headerlink:hover {
+  color: var(--eraneos-bold-orange);
+}
+
+/* ============================================================
+   Print styles
+   ============================================================ */
+@media print {
+  .md-header,
+  .md-footer,
+  .md-tabs {
+    display: none !important;
+  }
+}
