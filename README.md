@@ -12,7 +12,7 @@
 
 An open-source reference monorepo for end-to-end MLOps on Snowflake. The repo serves two complementary purposes:
 
-1. **Show what end-to-end MLOps on Snowflake can look like for a realistic, multi-team setup.** Existing Snowflake ML material focuses on individual pieces of the workflow. This repo wires the different Snowflake-native MLOps features together. It uses a hub-spoke layout (central platform infrastructure plus team-owned project spokes) as one specific way to organize that example. Other layouts can solve the same problem; the patterns demonstrated here generalize.
+1. **Show what end-to-end MLOps on Snowflake can look like for a realistic, multi-team setup.** Existing [Snowflake ML material](https://docs.snowflake.com/en/developer-guide/snowflake-ml/quickstart) focuses on individual pieces of the workflow. This repo wires the different Snowflake-native MLOps features together. It uses a hub-spoke layout (central platform infrastructure plus team-owned project spokes) as one specific way to organize that example. Other layouts can solve the same problem; the patterns demonstrated here generalize.
 
 2. **Showcase the breadth of Snowflake-native MLOps primitives and how they interact.** The repo exercises the Snowflake Feature Store, the Snowflake ML Model Registry, Snowflake Tasks DAGs for training and inference orchestration, native task observability (`TASK_HISTORY`, Account Usage), and the surrounding primitives (databases, schemas, warehouses, compute pools, roles, stages) that wire them together. Design choices default to Snowflake-native primitives over external tooling; external dependencies are introduced only when no native primitive exists or the native option is materially worse.
 
