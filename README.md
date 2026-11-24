@@ -1,16 +1,9 @@
 <p align="center">
-  <a href="https://www.eraneos.com">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="docs/assets/brand/eraneos_wordmark_white.svg">
-      <img src="docs/assets/brand/eraneos_wordmark_black.svg" alt="Eraneos" height="52">
-    </picture>
-  </a>
+  <a href="https://www.eraneos.com"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/assets/brand/eraneos_wordmark_white.svg"><img src="docs/assets/brand/eraneos_wordmark_black.svg" alt="Eraneos" height="52"></picture></a>
 &nbsp;
   <img src="docs/assets/brand/partner_crossmark.svg" alt="×" height="52">
 &nbsp;
-  <a href="https://www.snowflake.com/en/why-snowflake/partners/all-partners/eraneos/">
-    <img src="docs/assets/brand/snowflake_logo.svg" alt="Snowflake" height="52">
-  </a>
+  <a href="https://www.snowflake.com/en/why-snowflake/partners/all-partners/eraneos/"><img src="docs/assets/brand/snowflake_logo.svg" alt="Snowflake" height="52"></a>
 </p>
 
 > Eraneos is a [Snowflake partner](https://www.snowflake.com/en/why-snowflake/partners/all-partners/eraneos/). Together with Snowflake, we help customers design, build, and run data and AI platforms on the AI Data Cloud, from the platform foundations through to production machine learning. This repository shares some of that hands-on MLOps experience as an open reference.
