@@ -164,6 +164,14 @@ h1, h2, h3, h4, h5, h6 {
   width: auto;
 }
 
+/* Keep the wordmark from crowding the site title on narrow viewports */
+@media screen and (max-width: 44.9375em) {
+  .md-header__button.md-logo img,
+  .md-header__button.md-logo svg {
+    height: 20px;
+  }
+}
+
 /* ============================================================
    Links
    ============================================================ */
